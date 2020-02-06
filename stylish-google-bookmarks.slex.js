@@ -79,7 +79,10 @@ trigger.bind("click", function() {
     button.css("height", "3em");
     button.css("margin-top", "1em");
     button.css("border", "1px solid #ccc");
+    button.css("border-radius", "0.5em");
+    button.css("background-color", "#f2f2f2");
     button.css("font-size", "inherit");
+    button.css("color", "#5F6368");
     button.css("box-shadow", "0 0 2px 1px #eee");
     base.append(button);
     button.bind("click", function() {
@@ -111,7 +114,14 @@ trigger.bind("click", function() {
         logo.css("padding-left", "52px");
         logo.css("font-size", "20px");
         logo.css("font-weight", "bold");
-        logo.text("Googleブックマーク");
+        switch (navigator.language.substring(0, 2)) {
+        case "ja":
+            logo.text("Googleブックマーク");
+            break;
+        default:
+            logo.text("Google Bookmarks");
+            break;
+        }
         base.append(logo);
         
         var hr = $("<hr>");
