@@ -222,7 +222,6 @@ trigger.bind("click", function() {
     
     function navigate(url) {
         location.href = url;
-        close();
     }
     
     function setHoverEvent(element) {
