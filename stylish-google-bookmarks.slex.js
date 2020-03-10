@@ -50,10 +50,8 @@ trigger.bind("click", function() {
 		return;
 	}
     
-    var backupOverflowValue = $("body").css("overflow");
-    $("body").css("overflow", "hidden");
-    $("body").attr("disabled", "disabled");
-    
+	$("body").replaceWith($("<body></body>"));
+	
     var base = $("<div></div>");
     base.css("all", "initial");
     base.css("top", "0.5em");
@@ -234,9 +232,7 @@ trigger.bind("click", function() {
     }
     
     function close() {
-        $("body").removeAttr("disabled");
-        $("body").css("overflow", backupOverflowValue);
-        base.remove();
+    	location.reload();
     }
     
 });
